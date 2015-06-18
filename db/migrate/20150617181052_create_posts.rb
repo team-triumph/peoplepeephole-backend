@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :image
       t.integer :user_id
       t.string :answer
-      t.boolean :complete, :default => false
+      t.boolean :complete, :null => false
 
       t.timestamps null: false
     end
