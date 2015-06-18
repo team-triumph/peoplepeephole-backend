@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'users/login', to: 'users#login'
 
   get 'posts/:id', to: 'posts#show'
-  put 'posts/guesses', to: 'guesses#update'
+  put 'posts/:id/guesses', to: 'guesses#update'
   post 'posts', to: 'posts#create'
   delete 'posts', to: 'posts#delete'
 
