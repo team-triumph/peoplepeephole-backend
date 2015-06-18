@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
 
+  root to: 'posts#index'
+
   post 'users/register', to: 'users#register'
   post 'users/login', to: 'users#login'
+
+  get 'posts/:id', to: 'posts#show'
+  put 'posts/guesses', to: 'guesses#update'
+  post 'posts', to: 'posts#create'
+  delete 'posts', to: 'posts#delete'
+
+  get 'scoreboard', to: 'users#scoreboard'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
