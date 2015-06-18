@@ -1,7 +1,49 @@
 class PostsController < ApplicationController
+  before_action :authenticate_with_token!, only: [:create, :delete]
   def index
     @posts = Post.all
     render json: { post: @posts.as_json(only: [:image, :user_id,
                                                :answer, :complete, ]) }
+  end
+
+  def show
+    @post = Post.find(params[:id])
+
+      if @post.save
+      # render json "show.json.jbuilder", status: :ok
+    render json: { post: @post.as_json(only: [:image, :user_id,
+                                              :answer, :answer_1,
+                                              :answer_2, :answer_3,
+                                              :complete ]) },
+          status: :ok
+      else
+        render json: { errors: @post.errors.full_messages },
+          status: :not_found
+      end
+  end
+
+  def create
+
+    @post = current_user.posts.new(image: params[:image],
+                     user_id: current_user.id,
+                     answer: params[:answer],
+                     answer_1: params[:answer_1],
+                     answer_2: params[:answer_2],
+                     answer_3: params[:answer_3],
+                     complete: params[:complete])
+    if @post.save
+      # render json "register.json.jbuilder", status: :created
+      render json: { post: @post.as_json(only: [:image, :user_id, :answer,
+                                                :answer_1, :answer_2,
+                                                :answer_3, :complete]) },
+        status: :created
+    else
+      render json: { errors: @post.errors.full_messages },
+        status: :unprocessable_entity
+    end
+  end
+
+  def delete
+
   end
 end

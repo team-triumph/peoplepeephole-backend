@@ -24,7 +24,7 @@ class UsersController < ApplicationController
                      password: passhash,
                      username: params[:username])
     if @user.save
-      # render json "register.json.jbuilder", status: :created
+      # render json "login.json.jbuilder", status: :ok
       render json: { user: @user.as_json(only: [:id, :email, :access_token,
                                                 :first_name, :last_name,
                                                 :username]) },
