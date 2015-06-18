@@ -4,7 +4,7 @@ class CreateGuesses < ActiveRecord::Migration
       t.integer :user_id
       t.integer :post_id
       t.string :guess
-      t.integer :point
+      t.integer :point, :default => 1
 
       t.timestamps null: false
     end
