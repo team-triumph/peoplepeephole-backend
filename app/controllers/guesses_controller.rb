@@ -2,7 +2,7 @@ class GuessesController < ApplicationController
   def new
     @post = Post.find(params[:id])
     @guess = current_user.guesses.new(guess: params[:guess],
-                                      post_id: @post)
+                                      post_id: @post.id)
     if @guess.save
       render json: { guesses: @guess.as_json(only: [:guess, :point, :user_id, :post_id]) },
         status: :created

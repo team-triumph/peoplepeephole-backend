@@ -4,20 +4,103 @@ API
 Sign Up
 
 Path: POST '/users/register'
-Params:
 
+Params:
+  username: a string
+  first_name: a string
+  last_name: a string
+  email: a string
+  password: a string
+
+Response:
+  Status Code: 201 if successful, 422 if unsuccessful
+
+Example success:  {"user":{"id":2,"username":"pwood1285",
+  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+  {
+  "errors": [
+    "errors":["Email has already been taken"
+  ]
+  }
+
+
+Login
+
+Path: POST '/users/login'
+
+Params:
+username: a string
 email: a string
 password: a string
 Response:
 
 Status Code: 201 if successful, 422 if unsuccessful
-Example success:  { "user": { "id": 2, "email": "brit@tiy.com", "access_token": "c25ddd49a8b0bc1cb8ba84727538e376" } }
+
+Example success:  {"user":{"id":2,"username":"pwood1285",
+"first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+"access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+
 Example failure:
 {
 "errors": [
   "Email has already been taken"
 ]
 }
+
+
+Show Post
+
+Path: GET '/posts/:id'
+
+Params:
+  email: a string
+  password: a string
+
+Response:
+
+Status Code: 201 if successful, 422 if unsuccessful
+Example success:  {"user":{"id":2,"username":"pwood1285",
+  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example failure:
+{
+"errors": [
+  "Email has already been taken"
+]
+}
+
+
+
+Sign Up
+
+Path: POST '/posts/:id/guesses'
+
+Params:
+  username: a string
+  first_name: a string
+  last_name: a string
+  email: a string
+  password: a string
+
+Response:
+  Status Code: 201 if successful, 422 if unsuccessful
+
+Example success:  {"guesses":{"user_id":2,"post_id":2,"guess":"guess","point":null}}
+  {
+  "errors": [
+    "errors":["Email has already been taken"
+  ]
+  }
+
+
+
+post 'posts', to: 'posts#create'
+delete 'posts', to: 'posts#delete'
+
+get 'scoreboard', to: 'users#scoreboard'
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
