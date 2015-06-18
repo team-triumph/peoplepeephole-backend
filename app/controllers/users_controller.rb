@@ -34,4 +34,10 @@ class UsersController < ApplicationController
         status: :not_found
     end
   end
+
+  def scoreboard
+    binding.pry
+    @user = User.all
+    @user.guesses.map(&:point).sum
+  end
 end
