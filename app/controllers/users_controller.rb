@@ -36,7 +36,6 @@ class UsersController < ApplicationController
   end
 
   def scoreboard
-    binding.pry
     @user = User.all
     @user.guesses.map(&:point).sum
   end
