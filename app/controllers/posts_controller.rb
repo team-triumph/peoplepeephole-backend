@@ -23,7 +23,6 @@ class PostsController < ApplicationController
   end
 
   def create
-
     @post = current_user.posts.new(image: params[:image],
                      user_id: current_user.id,
                      answer: params[:answer],
@@ -33,7 +32,7 @@ class PostsController < ApplicationController
                      complete: params[:complete])
     if @post.save
       # render json "register.json.jbuilder", status: :created
-      render json: { post: @post.as_json(only: [:image, :user_id, :answer,
+      render json: { post: @post.as_json(only: [:id, :image, :user_id, :answer,
                                                 :answer_1, :answer_2,
                                                 :answer_3, :complete]) },
         status: :created
@@ -44,6 +43,11 @@ class PostsController < ApplicationController
   end
 
   def delete
+    @post = current_user.post.find(params[:id])
+    @post.destroy
+    else
+      flash[:alert] = 'Only the creator of the post may delete a post.'
+    end
 
   end
 end
