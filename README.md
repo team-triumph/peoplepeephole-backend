@@ -2,7 +2,7 @@
 
 #### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
 
-## **User**
+### **User**
 * [Register User](#register-user)
 `POST '/users/register'`
 * [Login User](#login-user)
@@ -10,7 +10,7 @@
 * [Get Scoreboard](#get-scoreboard)
 `GET '/scoreboard/'`
 
-## **Post**
+### **Post**
 * [Show Post](#show-post)
 `GET'/post/:id'`
 * [Create Post](#create-post)
@@ -18,7 +18,7 @@
 * [Delete Post](#delete-post)
 `DELETE '/posts/'`
 
-## **Guesses**
+### **Guesses**
 * [Create Guess](#create-guess)
 `POST 'posts/:id/guesses'`
 
@@ -39,12 +39,12 @@ Response:
 
 Example success:  
 ```json
-{"user":{"id":2,
+{ "user":{"id":3,
   "username":"JDrama2000",
   "first_name":"Johnny",
   "last_name":"Drama",
-  "email":"jdrama@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+  "email":"jdrama1@gmail.com",
+  "access_token":"bec50786aa082642fd9757845998f57d"}}
 ```
 Example failure:
 ```json
@@ -68,12 +68,12 @@ Response:
 
 Example success:  
 ```json
-{ "user":{"id":2,
+{ "user":{"id":3,
   "username":"JDrama2000",
   "first_name":"Johnny",
   "last_name":"Drama",
-  "email":"jdrama@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+  "email":"jdrama1@gmail.com",
+  "access_token":"bec50786aa082642fd9757845998f57d"}}
 ```
 Example failure:
 ```json
@@ -123,7 +123,7 @@ Response:
 
 Example success:  
 ```json
-{"user":{"id":2,
+{ "user":{"id":2,
   "username":"JDrama2000",
   "first_name":"Johnny",
   "last_name":"Drama",
@@ -153,7 +153,7 @@ Response:
 
 Example success:  
 ```json
-{"user":{"id":2,
+{ "user":{"id":2,
   "username":"JDrama2000",
   "first_name":"Johnny",
   "last_name":"Drama",
@@ -183,7 +183,7 @@ Response:
 
 Example success:  
 ```json
-{"user":{"id":2,
+{ "user":{"id":2,
   "username":"JDrama2000",
   "first_name":"Johnny",
   "last_name":"Drama",
@@ -213,7 +213,7 @@ Response:
 
 Example success:  
 ```json
-{"user":{"id":2,
+{ "user":{"id":2,
   "username":"JDrama2000",
   "first_name":"Johnny",
   "last_name":"Drama",
