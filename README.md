@@ -3,17 +3,17 @@
 **User**
 
 * Register User
-[Register User](#register-user)
+[Register User](register-user)
 * Login User
-[Login User](#login-user)
+[Login User](login-user)
 
 
 **Post**
 
 * Show Post
-[Show Post](#show-post)
+[Show Post](show-post)
 * Create Post
-[Create Post](#create-post)
+[Create Post](create-post)
 
 
 
