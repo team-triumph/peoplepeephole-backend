@@ -1,5 +1,5 @@
 == README
-**# People Peephole API**
+# People Peephole API
 
 **## User**
 [Register User](#register user)
