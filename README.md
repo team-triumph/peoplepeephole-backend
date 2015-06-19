@@ -2,18 +2,16 @@
 
 **User**
 
-* Register User
-[Register User](register-user)
-* Login User
-[Login User](login-user)
-
+* [Register User](#register-user)
+`Post'/users/register'`
+* [Login User](#login-user)
+`Post'/users/login'`
 
 **Post**
 
-* Show Post
-[Show Post](show-post)
-* Create Post
-[Create Post](create-post)
+* [Show Post](show-post)
+`GET'/post/:id'`
+* [Create Post](create-post)
 
 
 
