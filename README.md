@@ -3,6 +3,8 @@
 #### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
 
 ### **User**
+* [Get All Users](#get-all-users)
+`GET '/users'`
 * [Register User](#register-user)
 `POST '/users/register'`
 * [Login User](#login-user)
@@ -21,6 +23,32 @@
 ### **Guesses**
 * [Create Guess](#create-guess)
 `POST 'posts/:id/guesses'`
+
+
+### **Get All Users**
+
+`GET '/users'`
+
+Params:
+  * none
+* Returns and array of all users
+
+Response:
+  Status Code: 201 if successful, 422 if unsuccessful
+
+Example success:  
+```json
+{ "user":{"id":3,
+  "username":"JDrama2000",
+  "first_name":"Johnny",
+  "last_name":"Drama",
+  "email":"jdrama1@gmail.com",
+  "access_token":"bec50786aa082642fd9757845998f57d"}}
+```
+Example failure:
+```json
+  {"errors": ["errors":["Email has already been taken"]]}
+```
 
 
 ### **Register User**
