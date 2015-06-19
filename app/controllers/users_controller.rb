@@ -1,15 +1,11 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    if @user.save
-    render json: { user: @user.as_json(only: [:id, :email, :access_token,
+
+    render json: { user: @users.as_json(only: [:id, :email, :access_token,
                                               :first_name, :last_name,
                                               :username]) },
       status: :created
-    else
-      render json: { errors: @user.errors.full_messages },
-        status: :unprocessable_entity
-    end
   end
 
   def register
