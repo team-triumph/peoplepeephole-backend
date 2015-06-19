@@ -1,13 +1,22 @@
 == README
-API
+**People Peephole API**
 
-Register User
+**User**
 
-
-
-* Register User
+* [Register User]
 * Login User
+
+
+**Post**
+
 * Show Post
+* Create Post
+
+
+
+
+
+(**Register a User**
 
 Path: POST '/users/register'
 
@@ -28,7 +37,7 @@ Example success:  {"user":{"id":2,"username":"pwood1285",
   "errors": [
     "errors":["Email has already been taken"
   ]
-  }
+  })
 
 
 Login
