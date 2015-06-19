@@ -1,4 +1,4 @@
-# **People Peephole API**
+# **Guess What API**
 
 #### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
 
@@ -28,23 +28,28 @@
 `POST '/users/register'`
 
 Params:
-  username: a string
-  first_name: a string
-  last_name: a string
-  email: a string
-  password: a string
+  * username: a string
+  * first_name: a string
+  * last_name: a string
+  * email: a string
+  * password: a string
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
 
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+Example success:  
+```json
+{"user":{"id":2,
+  "username":"JDrama2000",
+  "first_name":"Johnny",
+  "last_name":"Drama",
+  "email":"jdrama@gmail.com",
   "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
-  {
-  "errors": [
-    "errors":["Email has already been taken"
-  ]
-  }
+```
+Example failure:
+```json
+  {"errors": ["errors":["Email has already been taken"]]}
+```
 
 
 ### **Login User**
@@ -52,23 +57,29 @@ Example success:  {"user":{"id":2,"username":"pwood1285",
 `POST '/users/login'`
 
 Params:
-username: a string
-email: a string
-password: a string
+  * username: a string
+  * first_name: a string
+  * last_name: a string
+  * email: a string
+  * password: a string
+
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-
-Example success:  {"user":{"id":2,"username":"pwood1285",
-"first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
-"access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
-
+Example success:  
+```json
+{ "user":{"id":2,
+  "username":"JDrama2000",
+  "first_name":"Johnny",
+  "last_name":"Drama",
+  "email":"jdrama@gmail.com",
+  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+  {"errors": ["errors":["Email has already been taken"]]}
+```
+
 
 
 ### **Get Scoreboard**
@@ -76,42 +87,54 @@ Example failure:
 `GET '/scoreboard/'`
 
 Params:
-  email: a string
-  password: a string
+  * none
+
+Returns json
 
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example success:  
+```json
+{ "user":{"id":2,
+  "username":"JDrama2000",
+  "points":20 }}
+
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+  {"errors": ["errors":["Email has already been taken"]]}
+```
+
 
 ### **Show Post**
 
 GET '/posts/:id'
 
 Params:
-  email: a string
-  password: a string
+  * username: a string
+  * first_name: a string
+  * last_name: a string
+  * email: a string
+  * password: a string
 
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+Example success:  
+```json
+{"user":{"id":2,
+  "username":"JDrama2000",
+  "first_name":"Johnny",
+  "last_name":"Drama",
+  "email":"jdrama@gmail.com",
   "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+  {"errors": ["errors":["Email has already been taken"]]}
+```
+
 
 
 ### **Create Post**
@@ -119,21 +142,29 @@ Example failure:
 `POST '/posts/'`
 
 Params:
-  email: a string
-  password: a string
+  * username: a string
+  * first_name: a string
+  * last_name: a string
+  * email: a string
+  * password: a string
 
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+Example success:  
+```json
+{"user":{"id":2,
+  "username":"JDrama2000",
+  "first_name":"Johnny",
+  "last_name":"Drama",
+  "email":"jdrama@gmail.com",
   "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+  {"errors": ["errors":["Email has already been taken"]]}
+```
+
 
 
 ### **Delete Post**
@@ -141,21 +172,29 @@ Example failure:
 `DELETE '/posts/'`
 
 Params:
-  email: a string
-  password: a string
+  * username: a string
+  * first_name: a string
+  * last_name: a string
+  * email: a string
+  * password: a string
 
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+Example success:  
+```json
+{"user":{"id":2,
+  "username":"JDrama2000",
+  "first_name":"Johnny",
+  "last_name":"Drama",
+  "email":"jdrama@gmail.com",
   "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+  {"errors": ["errors":["Email has already been taken"]]}
+```
+
 
 
 ### **Create Guess**
@@ -163,21 +202,29 @@ Example failure:
 `GET '/scoreboard/'`
 
 Params:
-  email: a string
-  password: a string
+  * username: a string
+  * first_name: a string
+  * last_name: a string
+  * email: a string
+  * password: a string
 
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+Example success:  
+```json
+{"user":{"id":2,
+  "username":"JDrama2000",
+  "first_name":"Johnny",
+  "last_name":"Drama",
+  "email":"jdrama@gmail.com",
   "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+  {"errors": ["errors":["Email has already been taken"]]}
+```
+
 
 
 This README would normally document whatever steps are necessary to get the
