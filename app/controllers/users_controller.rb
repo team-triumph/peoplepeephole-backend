@@ -20,25 +20,26 @@ class UsersController < ApplicationController
 
   def login
     passhash = Digest::SHA1.hexdigest(params[:password])
-    @user = User.find_by(email: params[:email],
-                     password: passhash,
+    @user = User.find_by(password: passhash,
                      username: params[:username])
-    if @user.save
-      # render json "login.json.jbuilder", status: :ok
+    if @user
+
       render json: { user: @user.as_json(only: [:id, :email, :access_token,
                                                 :first_name, :last_name,
                                                 :username]) },
         status: :ok
     else
-      render json: { errors: @user.errors.full_messages },
-        status: :not_found
+      render json: { message: "Invalid Login" },
+        status: :unauthenticated
     end
   end
 
   def scoreboard
 
+
     points = User.joins(:guesses).group(:username).order("sum_point DESC").sum(:point).limit(10)
       render json: { scoreboard: points.as_json}
+
 
   end
 end

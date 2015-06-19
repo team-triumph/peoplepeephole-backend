@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'posts/:id', to: 'posts#show'
   post 'posts/:id/guesses', to: 'guesses#create'
   post 'posts', to: 'posts#create'
-  delete 'posts', to: 'posts#delete'
+  delete 'posts/:id', to: 'posts#delete'
 
   get 'scoreboard', to: 'users#scoreboard'
 

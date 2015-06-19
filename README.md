@@ -1,24 +1,24 @@
-# **People Peephole API**
+# **Guess What API**
 
 #### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
 
-## **User**
+### **User**
 * [Register User](#register-user)
 `POST '/users/register'`
 * [Login User](#login-user)
 `POST '/users/login'`
 * [Get Scoreboard](#get-scoreboard)
-`GET '/scoreboard/'`
+`GET '/scoreboard'`
 
-## **Post**
+### **Post**
 * [Show Post](#show-post)
 `GET'/post/:id'`
 * [Create Post](#create-post)
-`POST '/posts/'`
+`POST '/posts'`
 * [Delete Post](#delete-post)
-`DELETE '/posts/'`
+`DELETE '/posts/:id'`
 
-## **Guesses**
+### **Guesses**
 * [Create Guess](#create-guess)
 `POST 'posts/:id/guesses'`
 
@@ -28,23 +28,28 @@
 `POST '/users/register'`
 
 Params:
-  username: a string
-  first_name: a string
-  last_name: a string
-  email: a string
-  password: a string
+  * username: a string
+  * first_name: a string
+  * last_name: a string
+  * email: a string
+  * password: a string
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
 
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
-  {
-  "errors": [
-    "errors":["Email has already been taken"
-  ]
-  }
+Example success:  
+```json
+{ "user":{"id":3,
+  "username":"JDrama2000",
+  "first_name":"Johnny",
+  "last_name":"Drama",
+  "email":"jdrama1@gmail.com",
+  "access_token":"bec50786aa082642fd9757845998f57d"}}
+```
+Example failure:
+```json
+  {"errors": ["errors":["Email has already been taken"]]}
+```
 
 
 ### **Login User**
@@ -52,23 +57,29 @@ Example success:  {"user":{"id":2,"username":"pwood1285",
 `POST '/users/login'`
 
 Params:
-username: a string
-email: a string
-password: a string
+  * username: a string
+  * first_name: a string
+  * last_name: a string
+  * email: a string
+  * password: a string
+
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-
-Example success:  {"user":{"id":2,"username":"pwood1285",
-"first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
-"access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
-
+Example success:  
+```json
+{ "user":{"id":3,
+  "username":"JDrama2000",
+  "first_name":"Johnny",
+  "last_name":"Drama",
+  "email":"jdrama1@gmail.com",
+  "access_token":"bec50786aa082642fd9757845998f57d"}}
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+{ "message":"Invalid Login" }
+```
+
 
 
 ### **Get Scoreboard**
@@ -76,42 +87,51 @@ Example failure:
 `GET '/scoreboard/'`
 
 Params:
-  email: a string
-  password: a string
+  * none
+* Returns scoreboard in json
 
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example success:  
+```json
+{ "user":{"id":2,
+  "username":"JDrama2000",
+  "points":20 }}
+
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+  {"errors": ["errors":["Email has already been taken"]]}
+```
+
 
 ### **Show Post**
 
 GET '/posts/:id'
 
 Params:
-  email: a string
-  password: a string
+  * none
+* Returns a single post
 
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example success:  
+```json
+{ "post":{"image":"image file",
+  "user_id":3,
+  "answer":"correct answer",
+  "complete":false,
+  "answer_1":"incorrect answer",
+  "answer_2":"incorrect answer",
+  "answer_3":"incorrect answer"}}
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+{ "message":"Access Token Not Found" }
+```
+
 
 
 ### **Create Post**
@@ -119,65 +139,81 @@ Example failure:
 `POST '/posts/'`
 
 Params:
-  email: a string
-  password: a string
+  * user_id: a integer
+  * image: a string
+  * answer: a string
+  * answer_1: a string
+  * answer_2: a string
+  * answer_3: a string
+  * answer_3: a boolean
 
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example success:  
+```json
+{ "post":{"id":6,
+  "image":"null",
+  "user_id":3,
+  "answer":"correct",
+  "complete":false,
+  "answer_1":"incorrect",
+  "answer_2":"incorrect",
+  "answer_3":"incorrect"}}
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+{ "message":"Access Token Not Found" }
+```
+
 
 
 ### **Delete Post**
 
-`DELETE '/posts/'`
+`DELETE '/posts/:id'`
 
 Params:
-  email: a string
-  password: a string
+  * none
+* Removes validated users' post
 
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example success:  
+```json
+{"message":"Post deleted"}
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+{ "message":"ERROR" }
+```
+
 
 
 ### **Create Guess**
 
-`GET '/scoreboard/'`
+`POST 'posts/:id/guesses'`
 
 Params:
-  email: a string
-  password: a string
+  * guess: "string"
 
 Response:
+  Status Code: 201 if successful, 422 if unsuccessful
 
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+Example success:  
+```json
+{ "user":{"id":2,
+  "guess":"A",
+  "point":1,
+  "user_id":3,
+  "post_id":6,
   "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+```
 Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
+```json
+{ "message":"Access Token Not Found" }
+```
+
 
 
 This README would normally document whatever steps are necessary to get the
