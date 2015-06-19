@@ -1,13 +1,13 @@
 == README
-**####People Peephole API**
+**# People Peephole API**
 
-**####User**
-
+**## User**
+[Register User](#register user)
 * Register User
 * Login User
 
 
-**####Post**
+**## Post**
 
 * Show Post
 * Create Post
@@ -16,7 +16,7 @@
 
 
 
-####Register a User
+**## Register a User**
 
 Path: POST '/users/register'
 
@@ -40,7 +40,7 @@ Example success:  {"user":{"id":2,"username":"pwood1285",
   }
 
 
-Login
+**## Login a User**
 
 Path: POST '/users/login'
 
@@ -64,7 +64,7 @@ Example failure:
 }
 
 
-Show Post
+**## Show Post**
 
 Path: GET '/posts/:id'
 
