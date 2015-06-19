@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
-  def index 
+  def index
     @users = User.all
+
+    render json: { user: @users.as_json(only: [:id, :email, :access_token,
+                                              :first_name, :last_name,
+                                              :username]) },
+      status: :created
   end
 
   def register
