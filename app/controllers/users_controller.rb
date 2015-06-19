@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    binding.protect_from_forgery
     @users = User.all
     if @users
     render json: { user: @user.as_json(only: [:id, :email, :access_token,
