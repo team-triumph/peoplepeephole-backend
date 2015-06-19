@@ -8,13 +8,13 @@
 * [Login User](#login-user)
 `POST '/users/login'`
 * [Get Scoreboard](#get-scoreboard)
-`GET '/scoreboard/'`
+`GET '/scoreboard'`
 
 ### **Post**
 * [Show Post](#show-post)
 `GET'/post/:id'`
 * [Create Post](#create-post)
-`POST '/posts/'`
+`POST '/posts'`
 * [Delete Post](#delete-post)
 `DELETE '/posts/:id'`
 
@@ -181,12 +181,7 @@ Response:
 
 Example success:  
 ```json
-{ "user":{"id":2,
-  "username":"JDrama2000",
-  "first_name":"Johnny",
-  "last_name":"Drama",
-  "email":"jdrama@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+{"message":"Post deleted"}
 ```
 Example failure:
 ```json

@@ -20,8 +20,7 @@ class UsersController < ApplicationController
 
   def login
     passhash = Digest::SHA1.hexdigest(params[:password])
-    @user = User.find_by(email: params[:email],
-                     password: passhash,
+    @user = User.find_by(password: passhash,
                      username: params[:username])
     if @user
 
@@ -36,7 +35,10 @@ class UsersController < ApplicationController
   end
 
   def scoreboard
+
+    @guess = Guess.all
     @user = User.all
+
     points = @user.each { |x| x.guesses.map(&:point).sum }
   end
 end
