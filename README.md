@@ -1,24 +1,32 @@
-**People Peephole API**
+# **People Peephole API**
 
-**User**
-[TOC]
+## **User**
+
 * [Register User](#register-user)
-`Post'/users/register'`
+`POST '/users/register'`
+
 * [Login User](#login-user)
-`Post'/users/login'`
+`POST '/users/login'`
 
-**Post**
+## **Post**
 
-* [Show Post](show-post)
+* [Show Post](#show-post)
 `GET'/post/:id'`
-* [Create Post](create-post)
+
+* [Create Post](#create-post)
+`POST '/posts/'`
+
+* [Delete Post](#delete-post)
+`DELETE '/posts/'`
+
+* [Get Scoreboard](#get-scoreboard)
+`GET '/scoreboard/'`
 
 
 
+### **Register User**
 
-**Register User**
-
-Path: POST '/users/register'
+`POST '/users/register'`
 
 Params:
   username: a string
@@ -40,9 +48,10 @@ Example success:  {"user":{"id":2,"username":"pwood1285",
   }
 
 
-**Login User**
 
-Path: POST '/users/login'
+### **Login User**
+
+`POST '/users/login'`
 
 Params:
 username: a string
@@ -64,32 +73,10 @@ Example failure:
 }
 
 
-**Show Post**
 
-Path: GET '/posts/:id'
+### **Show Post**
 
-Params:
-  email: a string
-  password: a string
-
-Response:
-
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
-Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
-
-
-
-**Create Post**
-
-Path: GET '/posts/:id'
+GET '/posts/:id'
 
 Params:
   email: a string
@@ -110,6 +97,94 @@ Example failure:
 
 
 
+### **Create Post**
+
+`POST '/posts/'`
+
+Params:
+  email: a string
+  password: a string
+
+Response:
+
+Status Code: 201 if successful, 422 if unsuccessful
+Example success:  {"user":{"id":2,"username":"pwood1285",
+  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example failure:
+{
+"errors": [
+  "Email has already been taken"
+]
+}
+
+### **Delete Post**
+<<<<<<< Updated upstream
+=======
+
+`DELETE '/posts/'`
+
+Params:
+  email: a string
+  password: a string
+
+Response:
+
+Status Code: 201 if successful, 422 if unsuccessful
+Example success:  {"user":{"id":2,"username":"pwood1285",
+  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example failure:
+{
+"errors": [
+  "Email has already been taken"
+]
+}
+>>>>>>> Stashed changes
+
+`DELETE '/posts/'`
+
+<<<<<<< Updated upstream
+Params:
+  email: a string
+  password: a string
+
+Response:
+
+Status Code: 201 if successful, 422 if unsuccessful
+Example success:  {"user":{"id":2,"username":"pwood1285",
+  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example failure:
+{
+"errors": [
+  "Email has already been taken"
+]
+}
+
+
+=======
+>>>>>>> Stashed changes
+### **Get Scoreboard**
+
+`GET '/scoreboard/'`
+
+Params:
+  email: a string
+  password: a string
+
+Response:
+
+Status Code: 201 if successful, 422 if unsuccessful
+Example success:  {"user":{"id":2,"username":"pwood1285",
+  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example failure:
+{
+"errors": [
+  "Email has already been taken"
+]
+}
 
 post 'posts', to: 'posts#create'
 delete 'posts', to: 'posts#delete'
