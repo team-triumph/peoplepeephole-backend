@@ -23,15 +23,15 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:email],
                      password: passhash,
                      username: params[:username])
-    if @user.save
+    if @user
 
       render json: { user: @user.as_json(only: [:id, :email, :access_token,
                                                 :first_name, :last_name,
                                                 :username]) },
         status: :ok
     else
-      render json: { errors: @user.errors.full_messages },
-        status: :not_found
+      render json: { message: "Invalid Login" },
+        status: :unauthenticated
     end
   end
 
