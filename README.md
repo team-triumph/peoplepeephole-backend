@@ -1,7 +1,7 @@
 **People Peephole API**
 
 **User**
-
+[TOC]
 * [Register User](#register-user)
 `Post'/users/register'`
 * [Login User](#login-user)
