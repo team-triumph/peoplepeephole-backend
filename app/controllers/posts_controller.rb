@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
       if @post.save
       # render json "show.json.jbuilder", status: :ok
-    render json: { post: @post.as_json(only: [:image, :user_id,
+      render json: { post: @post.as_json(only: [:image, :user_id,
                                               :answer, :answer_1,
                                               :answer_2, :answer_3,
                                               :complete ]) },
@@ -43,14 +43,13 @@ class PostsController < ApplicationController
   end
 
   def delete
-
-    @post = current_user.posts.find(params[:id])
+    @post = current_user.posts.find_by(id: params[:id])
     if @post
       @post.destroy
+      render json: {message: "Post deleted"}
     else
-      render json: { message: "Invalid Post ID." },
+      render json: { message: "User id not found." },
         status: :unauthorized
     end
-
   end
 end
