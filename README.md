@@ -18,7 +18,7 @@
 
 
 
-**Register a User**
+**Register User**
 
 Path: POST '/users/register'
 
@@ -42,7 +42,7 @@ Example success:  {"user":{"id":2,"username":"pwood1285",
   }
 
 
-**Login a User**
+**Login User**
 
 Path: POST '/users/login'
 
@@ -89,26 +89,27 @@ Example failure:
 
 
 
-Sign Up
+**Create Post**
 
-Path: POST '/posts/:id/guesses'
+Path: GET '/posts/:id'
 
 Params:
-  username: a string
-  first_name: a string
-  last_name: a string
   email: a string
   password: a string
 
 Response:
-  Status Code: 201 if successful, 422 if unsuccessful
 
-Example success:  {"guesses":{"user_id":2,"post_id":2,"guess":"guess","point":null}}
-  {
-  "errors": [
-    "errors":["Email has already been taken"
-  ]
-  }
+Status Code: 201 if successful, 422 if unsuccessful
+Example success:  {"user":{"id":2,"username":"pwood1285",
+  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example failure:
+{
+"errors": [
+  "Email has already been taken"
+]
+}
+
 
 
 
