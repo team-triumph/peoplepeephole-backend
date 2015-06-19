@@ -16,7 +16,7 @@
 * [Create Post](#create-post)
 `POST '/posts/'`
 * [Delete Post](#delete-post)
-`DELETE '/posts/'`
+`DELETE '/posts/:id'`
 
 ### **Guesses**
 * [Create Guess](#create-guess)
@@ -77,7 +77,7 @@ Example success:
 ```
 Example failure:
 ```json
-  {"errors": ["errors":["Email has already been taken"]]}
+{ "message":"Invalid Login" }
 ```
 
 
@@ -88,8 +88,7 @@ Example failure:
 
 Params:
   * none
-
-Returns json
+* Returns scoreboard in json
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
@@ -112,27 +111,25 @@ Example failure:
 GET '/posts/:id'
 
 Params:
-  * username: a string
-  * first_name: a string
-  * last_name: a string
-  * email: a string
-  * password: a string
+  * none
+* Returns a single post
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
 
 Example success:  
 ```json
-{ "user":{"id":2,
-  "username":"JDrama2000",
-  "first_name":"Johnny",
-  "last_name":"Drama",
-  "email":"jdrama@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+{ "post":{"image":"image file",
+  "user_id":3,
+  "answer":"correct answer",
+  "complete":false,
+  "answer_1":"incorrect answer",
+  "answer_2":"incorrect answer",
+  "answer_3":"incorrect answer"}}
 ```
 Example failure:
 ```json
-  {"errors": ["errors":["Email has already been taken"]]}
+{ "message":"Access Token Not Found" }
 ```
 
 
@@ -142,41 +139,42 @@ Example failure:
 `POST '/posts/'`
 
 Params:
-  * username: a string
-  * first_name: a string
-  * last_name: a string
-  * email: a string
-  * password: a string
+  * user_id: a integer
+  * image: a string
+  * answer: a string
+  * answer_1: a string
+  * answer_2: a string
+  * answer_3: a string
+  * answer_3: a boolean
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
 
 Example success:  
 ```json
-{ "user":{"id":2,
-  "username":"JDrama2000",
-  "first_name":"Johnny",
-  "last_name":"Drama",
-  "email":"jdrama@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+{ "post":{"id":6,
+  "image":"null",
+  "user_id":3,
+  "answer":"correct",
+  "complete":false,
+  "answer_1":"incorrect",
+  "answer_2":"incorrect",
+  "answer_3":"incorrect"}}
 ```
 Example failure:
 ```json
-  {"errors": ["errors":["Email has already been taken"]]}
+{ "message":"Access Token Not Found" }
 ```
 
 
 
 ### **Delete Post**
 
-`DELETE '/posts/'`
+`DELETE '/posts/:id'`
 
 Params:
-  * username: a string
-  * first_name: a string
-  * last_name: a string
-  * email: a string
-  * password: a string
+  * none
+* Removes validated users' post
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
