@@ -1,16 +1,6 @@
 class UsersController < ApplicationController
-  def index
-    binding.pry 
+  def index 
     @users = User.all
-    if @users
-    render json: { user: @user.as_json(only: [:id, :email, :access_token,
-                                              :first_name, :last_name,
-                                              :username]) },
-      status: :created
-    else
-      render json: { errors: @user.errors.full_messages },
-        status: :unprocessable_entity
-    end
   end
 
   def register
