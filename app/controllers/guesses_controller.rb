@@ -1,5 +1,5 @@
 class GuessesController < ApplicationController
-  def new
+  def create
     @post = Post.find(params[:id])
     @guess = current_user.guesses.new(guess: params[:guess],
                                       post_id: @post.id)

@@ -1,29 +1,26 @@
 # **People Peephole API**
 
-## **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
+#### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
 
 ## **User**
-
 * [Register User](#register-user)
 `POST '/users/register'`
-
 * [Login User](#login-user)
 `POST '/users/login'`
-
-## **Post**
-
-* [Show Post](#show-post)
-`GET'/post/:id'`
-
-* [Create Post](#create-post)
-`POST '/posts/'`
-
-* [Delete Post](#delete-post)
-`DELETE '/posts/'`
-
 * [Get Scoreboard](#get-scoreboard)
 `GET '/scoreboard/'`
 
+## **Post**
+* [Show Post](#show-post)
+`GET'/post/:id'`
+* [Create Post](#create-post)
+`POST '/posts/'`
+* [Delete Post](#delete-post)
+`DELETE '/posts/'`
+
+## **Guesses**
+* [Create Guess](#create-guess)
+`POST 'posts/:id/guesses'`
 
 
 ### **Register User**
@@ -50,7 +47,6 @@ Example success:  {"user":{"id":2,"username":"pwood1285",
   }
 
 
-
 ### **Login User**
 
 `POST '/users/login'`
@@ -75,6 +71,26 @@ Example failure:
 }
 
 
+### **Get Scoreboard**
+
+`GET '/scoreboard/'`
+
+Params:
+  email: a string
+  password: a string
+
+Response:
+
+Status Code: 201 if successful, 422 if unsuccessful
+Example success:  {"user":{"id":2,"username":"pwood1285",
+  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
+  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
+Example failure:
+{
+"errors": [
+  "Email has already been taken"
+]
+}
 
 ### **Show Post**
 
@@ -98,7 +114,6 @@ Example failure:
 }
 
 
-
 ### **Create Post**
 
 `POST '/posts/'`
@@ -120,9 +135,8 @@ Example failure:
 ]
 }
 
+
 ### **Delete Post**
-<<<<<<< Updated upstream
-=======
 
 `DELETE '/posts/'`
 
@@ -142,32 +156,9 @@ Example failure:
   "Email has already been taken"
 ]
 }
->>>>>>> Stashed changes
-
-`DELETE '/posts/'`
-
-<<<<<<< Updated upstream
-Params:
-  email: a string
-  password: a string
-
-Response:
-
-Status Code: 201 if successful, 422 if unsuccessful
-Example success:  {"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
-  "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
-Example failure:
-{
-"errors": [
-  "Email has already been taken"
-]
-}
 
 
-=======
->>>>>>> Stashed changes
-### **Get Scoreboard**
+### **Create Guess**
 
 `GET '/scoreboard/'`
 
@@ -187,11 +178,6 @@ Example failure:
   "Email has already been taken"
 ]
 }
-
-post 'posts', to: 'posts#create'
-delete 'posts', to: 'posts#delete'
-
-get 'scoreboard', to: 'users#scoreboard'
 
 
 This README would normally document whatever steps are necessary to get the
