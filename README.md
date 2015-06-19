@@ -185,7 +185,7 @@ Example success:
 ```
 Example failure:
 ```json
-{ "message":"Something is fucked up" }
+{ "message":"ERROR" }
 ```
 
 
@@ -203,8 +203,8 @@ Response:
 Example success:  
 ```json
 { "user":{"id":2,
-  "guess":" ",
-  "point":30,
+  "guess":"A",
+  "point":1,
   "user_id":3,
   "post_id":6,
   "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
