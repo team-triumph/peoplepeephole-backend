@@ -43,10 +43,13 @@ class PostsController < ApplicationController
   end
 
   def delete
-    @post = current_user.post.find(params[:id])
-    @post.destroy
+
+    @post = current_user.posts.find(params[:id])
+    if @post
+      @post.destroy
     else
-      flash[:alert] = 'Only the creator of the post may delete a post.'
+      render json: { message: "Invalid Post ID." },
+        status: :unauthorized
     end
 
   end
