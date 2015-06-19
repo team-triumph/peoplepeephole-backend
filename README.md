@@ -37,7 +37,8 @@ Params:
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
 
-Example success:  `{"user":{"id":2,"username":"pwood1285",
+Example success:  
+`{"user":{"id":2,"username":"pwood1285",
   "first_name":"Philip","last_name":"Wood","email":"pwood1285@gmail.com",
   "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
   {
