@@ -1,13 +1,22 @@
 == README
-API
+**####People Peephole API**
 
-Register User
-
-
+**####User**
 
 * Register User
 * Login User
+
+
+**####Post**
+
 * Show Post
+* Create Post
+
+
+
+
+
+####Register a User
 
 Path: POST '/users/register'
 
