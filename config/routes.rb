@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root to: 'posts#index'
-
+  get 'users', to: 'users#index'
   post 'users/register', to: 'users#register'
   post 'users/login', to: 'users#login'
 

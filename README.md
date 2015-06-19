@@ -31,7 +31,8 @@
 
 Params:
   * none
-* Returns and array of all users
+  * Returns and array of all users
+
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
