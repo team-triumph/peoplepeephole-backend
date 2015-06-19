@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    if @user.save
+    if @users.save
     render json: { user: @user.as_json(only: [:id, :email, :access_token,
                                               :first_name, :last_name,
                                               :username]) },
