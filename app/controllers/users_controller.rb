@@ -35,11 +35,7 @@ class UsersController < ApplicationController
   end
 
   def scoreboard
-
-
     points = User.joins(:guesses).group(:username).order("sum_point DESC").sum(:point).limit(10)
       render json: { scoreboard: points.as_json}
-
-
   end
 end
