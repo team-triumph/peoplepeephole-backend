@@ -39,17 +39,16 @@ Response:
 
 Example success:  
 ```json
-{"user":{"id":2,"username":"pwood1285",
-  "first_name":"Philip", "last_name":"Wood", "email":"pwood1285@gmail.com",
+{"user":{"id":2,
+  "username":"pwood1285",
+  "first_name":"Philip",
+  "last_name":"Wood",
+  "email":"pwood1285@gmail.com",
   "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
 ```
 Example failure:
 ```json
-  {
-  "errors": [
-    "errors":["Email has already been taken"
-]]
-  }
+  {"errors": ["errors":["Email has already been taken"]]}
 ```
 
 
