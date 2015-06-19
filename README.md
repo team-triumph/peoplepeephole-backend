@@ -190,21 +190,17 @@ Example success:
 ```
 Example failure:
 ```json
-  {"errors": ["errors":["Email has already been taken"]]}
+{ "message":"Something is fucked up" }
 ```
 
 
 
 ### **Create Guess**
 
-`GET '/scoreboard/'`
+`POST 'posts/:id/guesses'`
 
 Params:
-  * username: a string
-  * first_name: a string
-  * last_name: a string
-  * email: a string
-  * password: a string
+  * guess: "string"
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
@@ -212,15 +208,15 @@ Response:
 Example success:  
 ```json
 { "user":{"id":2,
-  "username":"JDrama2000",
-  "first_name":"Johnny",
-  "last_name":"Drama",
-  "email":"jdrama@gmail.com",
+  "guess":" ",
+  "point":30,
+  "user_id":3,
+  "post_id":6,
   "access_token":"25a0eea82cd2fd34c34ddadc2447fb92"}}
 ```
 Example failure:
 ```json
-  {"errors": ["errors":["Email has already been taken"]]}
+{ "message":"Access Token Not Found" }
 ```
 
 
