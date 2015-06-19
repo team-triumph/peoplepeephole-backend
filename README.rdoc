@@ -5,9 +5,9 @@ Register User
 
 
 
-*Register User
-*Login User
-*Show Post
+* Register User
+* Login User
+* Show Post
 
 Path: POST '/users/register'
 
