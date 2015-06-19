@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    if @user.save
     render json: { user: @user.as_json(only: [:id, :email, :access_token,
                                               :first_name, :last_name,
                                               :username]) },
@@ -48,6 +49,6 @@ class UsersController < ApplicationController
 
   def scoreboard
     points = User.joins(:guesses).group(:username).order("sum_point DESC").sum(:point).limit(10)
-      render json: { scoreboard: points.as_json}
+    render json: { scoreboard: points.as_json}
   end
 end
