@@ -28,11 +28,11 @@
 `POST '/users/register'`
 
 Params:
-  username: a string
-  first_name: a string
-  last_name: a string
-  email: a string
-  password: a string
+  * username: a string
+  * first_name: a string
+  * last_name: a string
+  * email: a string
+  * password: a string
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
