@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'users/register', to: 'users#register'
   post 'users/login', to: 'users#login'
 
+  get 'posts', to: 'posts#index'
   get 'posts/:id', to: 'posts#show'
   post 'posts/:id/guesses', to: 'guesses#create'
   post 'posts', to: 'posts#create'
