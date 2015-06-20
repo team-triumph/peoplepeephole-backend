@@ -150,12 +150,34 @@ Response:
 
 Example success:  
 ```json
-{ "user":{"id":3,
-  "username":"JDrama2000",
-  "first_name":"Johnny",
-  "last_name":"Drama",
-  "email":"jdrama1@gmail.com",
-  "access_token":"bec50786aa082642fd9757845998f57d"}}
+{
+  "post": [
+    {
+      "image": "www.photos.com/photos1",
+      "user_id": 1,
+      "answer": "answer",
+      "complete": false
+    },
+    {
+      "image": "www.photos.com/photos2",
+      "user_id": 2,
+      "answer": "answer",
+      "complete": false
+    },
+    {
+      "image": "www.photos.com/photos3",
+      "user_id": 1,
+      "answer": "answer",
+      "complete": false
+    },
+    {
+      "image": "www.photos.com/photos4",
+      "user_id": 4,
+      "answer": "answer",
+      "complete": false
+    }
+  ]
+}
 ```
 Example failure:
 ```json
