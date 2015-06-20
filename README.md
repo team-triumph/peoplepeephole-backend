@@ -1,8 +1,12 @@
 # **Guess What API**
+* Ruby version
+__ruby 2.1.5p273__
 
 #### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
 
 ### **User**
+* [Get All Users](#get-all-users)
+`GET '/users'`
 * [Register User](#register-user)
 `POST '/users/register'`
 * [Login User](#login-user)
@@ -21,6 +25,33 @@
 ### **Guesses**
 * [Create Guess](#create-guess)
 `POST 'posts/:id/guesses'`
+
+
+### **Get All Users**
+
+`GET '/users'`
+
+Params:
+  * none
+  * Returns and array of all users
+
+
+Response:
+  Status Code: 201 if successful, 422 if unsuccessful
+
+Example success:  
+```json
+{ "user":{"id":3,
+  "username":"JDrama2000",
+  "first_name":"Johnny",
+  "last_name":"Drama",
+  "email":"jdrama1@gmail.com",
+  "access_token":"bec50786aa082642fd9757845998f57d"}}
+```
+Example failure:
+```json
+  {"errors": ["errors":["Email has already been taken"]]}
+```
 
 
 ### **Register User**
@@ -58,9 +89,6 @@ Example failure:
 
 Params:
   * username: a string
-  * first_name: a string
-  * last_name: a string
-  * email: a string
   * password: a string
 
 Response:
@@ -84,7 +112,7 @@ Example failure:
 
 ### **Get Scoreboard**
 
-`GET '/scoreboard/'`
+`GET '/scoreboard'`
 
 Params:
   * none
@@ -102,7 +130,7 @@ Example success:
 ```
 Example failure:
 ```json
-  {"errors": ["errors":["Email has already been taken"]]}
+  {"errors": ["errors":["Error With Scoreboard"]]}
 ```
 
 
@@ -136,16 +164,15 @@ Example failure:
 
 ### **Create Post**
 
-`POST '/posts/'`
+`POST '/posts'`
 
 Params:
-  * user_id: a integer
   * image: a string
   * answer: a string
   * answer_1: a string
   * answer_2: a string
   * answer_3: a string
-  * answer_3: a boolean
+
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
@@ -213,32 +240,3 @@ Example failure:
 ```json
 { "message":"Access Token Not Found" }
 ```
-
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
