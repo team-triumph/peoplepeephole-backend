@@ -15,6 +15,8 @@ __ruby 2.1.5p273__
 `GET '/scoreboard'`
 
 ### **Post**
+* [Get All Posts](#get-all-posts)
+`GET '/posts'`
 * [Show Post](#show-post)
 `GET'/post/:id'`
 * [Create Post](#create-post)
@@ -25,6 +27,7 @@ __ruby 2.1.5p273__
 ### **Guesses**
 * [Create Guess](#create-guess)
 `POST 'posts/:id/guesses'`
+
 
 
 ### **Get All Users**
@@ -131,6 +134,32 @@ Example success:
 Example failure:
 ```json
   {"errors": ["errors":["Error With Scoreboard"]]}
+```
+
+### **Get All Posts**
+
+`GET '/posts'`
+
+Params:
+  * none
+  * Returns and array of all posts
+
+
+Response:
+  Status Code: 201 if successful, 422 if unsuccessful
+
+Example success:  
+```json
+{ "user":{"id":3,
+  "username":"JDrama2000",
+  "first_name":"Johnny",
+  "last_name":"Drama",
+  "email":"jdrama1@gmail.com",
+  "access_token":"bec50786aa082642fd9757845998f57d"}}
+```
+Example failure:
+```json
+  {"errors": ["errors":["Error when loading posts"]]}
 ```
 
 
