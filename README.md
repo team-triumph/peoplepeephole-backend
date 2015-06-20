@@ -1,4 +1,5 @@
 # **Guess What API**
+* Ruby version
 __ruby 2.1.5p273__
 
 #### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
@@ -243,31 +244,3 @@ Example failure:
 ```json
 { "message":"Access Token Not Found" }
 ```
-
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
