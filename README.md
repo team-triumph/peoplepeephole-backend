@@ -1,4 +1,5 @@
 # **Guess What API**
+__ruby 2.1.5p273__
 
 #### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
 
@@ -113,7 +114,7 @@ Example failure:
 
 ### **Get Scoreboard**
 
-`GET '/scoreboard/'`
+`GET '/scoreboard'`
 
 Params:
   * none
@@ -165,7 +166,7 @@ Example failure:
 
 ### **Create Post**
 
-`POST '/posts/'`
+`POST '/posts'`
 
 Params:
   * user_id: a integer
@@ -174,7 +175,7 @@ Params:
   * answer_1: a string
   * answer_2: a string
   * answer_3: a string
-  * answer_3: a boolean
+  * complete: a boolean
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
@@ -248,7 +249,6 @@ Example failure:
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
 
 * Ruby version
 
