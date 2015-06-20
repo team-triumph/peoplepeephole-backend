@@ -89,9 +89,6 @@ Example failure:
 
 Params:
   * username: a string
-  * first_name: a string
-  * last_name: a string
-  * email: a string
   * password: a string
 
 Response:
@@ -133,7 +130,7 @@ Example success:
 ```
 Example failure:
 ```json
-  {"errors": ["errors":["Email has already been taken"]]}
+  {"errors": ["errors":["Error With Scoreboard"]]}
 ```
 
 
@@ -170,13 +167,13 @@ Example failure:
 `POST '/posts'`
 
 Params:
-  * user_id: a integer
   * image: a string
+  * user_id: a integer
   * answer: a string
   * answer_1: a string
   * answer_2: a string
   * answer_3: a string
-  * complete: a boolean
+
 
 Response:
   Status Code: 201 if successful, 422 if unsuccessful
