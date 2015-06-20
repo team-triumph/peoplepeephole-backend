@@ -168,7 +168,6 @@ Example failure:
 
 Params:
   * image: a string
-  * user_id: a integer
   * answer: a string
   * answer_1: a string
   * answer_2: a string
