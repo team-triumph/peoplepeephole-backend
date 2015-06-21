@@ -4,8 +4,9 @@ class PostsController < ApplicationController
   def index
     @post = Post.all
      respond_to { |format|
-     format.json { render :json => @post.to_json(:include => :user) }
-   }
+     format.json { render :json => @post.as_json(:include => { :user => { :only => [:username]}}) }}
+
+
   end
 
   def show
