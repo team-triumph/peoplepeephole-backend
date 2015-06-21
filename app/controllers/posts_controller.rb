@@ -2,12 +2,9 @@ class PostsController < ApplicationController
   before_action :authenticate_with_token!, only: [:create, :delete]
 
   def index
-    @post = Post.all
-     respond_to { |format|
-     format.json { render :json => @post.as_json(:include => { :user => { :only => [:username]}}) }}
-
-
-  end
+  @posts = Post.all
+  render json: @posts.as_json(include: { user: { only: [:username] } } )
+end
 
   def show
     @post = Post.find(params[:id])
