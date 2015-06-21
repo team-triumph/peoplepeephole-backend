@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :posts, defaults: {format: :json}
+
   root to: 'posts#index'
   get 'users', to: 'users#index'
   post 'users/register', to: 'users#register'
