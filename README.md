@@ -2,7 +2,8 @@
 * Ruby version
 __ruby 2.1.5p273__
 
-#### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
+### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
+
 
 ### **User**
 * [Get All Users](#get-all-users)
@@ -153,6 +154,7 @@ Example success:
 {
   "post": [
     {
+<<<<<<< Updated upstream
       "image": "www.photos.com/photos1",
       "user_id": 1,
       "answer": "answer",
@@ -174,6 +176,29 @@ Example success:
       "image": "www.photos.com/photos4",
       "user_id": 4,
       "answer": "answer",
+=======
+      "image": "www.photo.com/photo",
+      "user_id": 1,
+      "answer": 1,
+      "complete": false
+    },
+    {
+      "image": "www.photo.com/photo",
+      "user_id": 2,
+      "answer": 1,
+      "complete": false
+    },
+    {
+      "image": "www.photo.com/photo",
+      "user_id": 3,
+      "answer": 1,
+      "complete": false
+    },
+    {
+      "image": "www.photo.com/photo",
+      "user_id": 4,
+      "answer": 1,
+>>>>>>> Stashed changes
       "complete": false
     }
   ]

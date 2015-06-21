@@ -3,8 +3,8 @@ class PostsController < ApplicationController
 
   def index
   @posts = Post.all
-  render json: @posts.as_json(include: { user: { only: [:username] } } )
-end
+  render json: @posts.as_json(include: { user: { only: [:username, :access_token] } } )
+  end
 
   def show
     @post = Post.find(params[:id])
