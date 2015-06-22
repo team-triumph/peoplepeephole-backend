@@ -28,13 +28,13 @@ class PostsController < ApplicationController
                      answer: params[:answer],
                      answer_1: params[:answer_1],
                      answer_2: params[:answer_2],
-                     answer_3: params[:answer_3],
-                     complete: params[:complete])
+                     answer_3: params[:answer_3])
+
     if @post.save
       # render json "register.json.jbuilder", status: :created
       render json: { post: @post.as_json(only: [:id, :image, :user_id, :answer,
                                                 :answer_1, :answer_2,
-                                                :answer_3, complete:]) },
+                                                :answer_3, :complete]) },
         status: :created
     else
       render json: { errors: @post.errors.full_messages },
