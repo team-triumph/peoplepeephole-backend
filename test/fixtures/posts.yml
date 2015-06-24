@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  image: MyString
-  user_id: 1
-  answer: MyString
+post1:
+  image: url1
+  user_id: 813415412
+  answer: correct
 
-two:
-  image: MyString
-  user_id: 1
-  answer: MyString
+post2:
+  image: url2
+  user_id: 813415412
+  answer: incorrect
