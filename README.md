@@ -1,6 +1,8 @@
-# **Guess What API**
+# **Picture Guessing Game API**
 * Ruby version
 __ruby 2.1.5p273__
+
+Picture Guessing Game is a game where a user views images and trys to guess what they are, using a multiple format. Only logged in users have the ability to upload photos to their account, but all users can play the game. If the user guesses the correct answer, they receive a point and the image it removed.  
 
 ### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
 
@@ -154,7 +156,6 @@ Example success:
 {
   "post": [
     {
-<<<<<<< Updated upstream
       "image": "www.photos.com/photos1",
       "user_id": 1,
       "answer": "answer",
@@ -173,34 +174,11 @@ Example success:
       "complete": false
     },
     {
-      "image": "www.photos.com/photos4",
-      "user_id": 4,
-      "answer": "answer",
-=======
-      "image": "www.photo.com/photo",
-      "user_id": 1,
-      "answer": 1,
-      "complete": false
-    },
-    {
       "image": "www.photo.com/photo",
       "user_id": 2,
       "answer": 1,
       "complete": false
     },
-    {
-      "image": "www.photo.com/photo",
-      "user_id": 3,
-      "answer": 1,
-      "complete": false
-    },
-    {
-      "image": "www.photo.com/photo",
-      "user_id": 4,
-      "answer": 1,
->>>>>>> Stashed changes
-      "complete": false
-    }
   ]
 }
 ```
