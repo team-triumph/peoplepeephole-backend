@@ -3,7 +3,7 @@
 __ruby 2.1.5p273__
 
 Picture Guessing Game is a game where a user views images and trys to guess what they are, using a multiple choice format. Only logged in users have the ability to upload photos to their account, but all users can play the game. If the user guesses the correct answer, they receive a point and the image it removed.  
-
+### **Return To Philip Wood's Website: https://philipcwood.wordpress.com**
 ### **Base URL: https://aqueous-brushlands-9148.herokuapp.com/**
 
 
